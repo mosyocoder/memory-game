@@ -1,12 +1,223 @@
-body{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-.cont{
-    background-image: url('../public/background.jpg');
-    background-size: cover;
+.App{
+    position: relative;
+  }
+  
+  
+  #grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    height: 90vh;
+    aspect-ratio: 5/6;
+    padding:.5em;
+    margin: auto;
+    gap:.5em;
+    margin-top:10px;
+  }
+  
+  #theme{
+    position: absolute;
+    top:1em;
+    left:1em;
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    background: yellow !important;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fff;
+    background-size: 100%;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  #score{
+    padding:0 1em 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width:5em;
+    border:1px solid #555;
+    border-radius: .5em;
+    margin-top:1em;
+  }
+  
+  #skor{
+    border-bottom:1px solid #555;
+    width:100%;
+    padding:.5em 0;
+    text-align: center;
+  }
+  
+  #puan{
+    font-weight: 600;
+    font-size:3em;
+  }
+  
+  body.dark #score{
+    color:#fff
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  #newgame{
+    position: fixed;
+    top:50%;
+    left:50%;
+    width:auto;
+    height:auto;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border-radius: .5em;
+  }
+  
+  #newgameic{
+    text-align: center;
+    background: linear-gradient(45deg,rgba(255,255,255,0.8),rgba(255,255,255,0.5),rgba(255,255,255,0.8),rgba(255,255,255,0.5),rgba(255,255,255,0.8),rgba(255,255,255,0.5));
+    padding:2em;
+    border-radius: .5em;
+    backdrop-filter: blur(2px);
+    border:1px solid rgba(255,255,255,0.8);
     width: 100%;
-    height: 100vh;
-}
+  }
+  
+  #newgameheader{
+    font-size:1.2em;
+    font-weight: 600;
+    padding: 0 0 1em 0;
+  }
+  
+  #action a{
+    padding:.75em 1em;
+    margin-top:2em;
+    background: #2196F3;
+    color:#fff;
+    border-radius: .5em;
+    border:0;
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+  }
+  
+  body.dark #action a{
+    background: #000;
+    color:#efefef
+  }
+  
+  body.dark #newgameic{
+    background: #222;
+    color:#efefef
+  }
+  
+  #footer{
+    background: transparent;
+    width: auto;
+    text-align: center;
+    padding:1em;
+    position: absolute;
+    left:0;
+    bottom:0
+  }
+  
+  #footer a{
+    color:inherit;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  
+  body.dark #footer{
+    color:#efefef;
+  }
+  
+  @media screen and (max-width:700px) {
+    #theme{
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      top:0;
+      left:0;
+      padding:1.5em 0.5em 1em;
+    }
+    #score{
+      flex-direction: row;
+      margin:0;
+      padding: .5em 0;
+    }
+    #skor{
+      border:0;
+      border-right:1px solid #555;
+      padding:0 1em
+    }
+    #puan{
+      font-size:1em;
+      padding:0 1em
+    }
+  
+    #grid{
+      width: 100%;
+      height: fit-content;
+      gap:.25em !important;
+    }
+  
+    #footer{
+      position: relative;
+      width:100%;
+    }
+  
+    #newgame{
+      width: 90%;
+    }
+  }

@@ -12,51 +12,61 @@ import imgten from "./images/10.jpeg";
 export const images = [
 	{
 		image: imgone,
+		imageNo: 1,
 		matched: false,
 		opened: false,
 	},
 	{
 		image: imgtwo,
+		imageNo: 2,
 		matched: false,
 		opened: false,
 	},
 	{
 		image: imgthree,
+		imageNo: 3,
 		matched: false,
 		opened: false,
 	},
 	{
 		image: imgfour,
+		imageNo: 4,
 		matched: false,
 		opened: false,
 	},
 	{
 		image: imgfive,
+		imageNo: 5,
 		matched: false,
 		opened: false,
 	},
 	{
 		image: imgsix,
+		imageNo: 6,
 		matched: false,
 		opened: false,
 	},
 	{
 		image: imgseven,
+		imageNo: 7,
 		matched: false,
 		opened: false,
 	},
 	{
 		image: imgeight,
+		imageNo: 8,
 		matched: false,
 		opened: false,
 	},
 	{
 		image: imgnine,
+		imageNo: 9,
 		matched: false,
 		opened: false,
 	},
 	{
 		image: imgten,
+		imageNo: 10,
 		matched: false,
 		opened: false,
 	},

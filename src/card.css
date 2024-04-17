@@ -1,0 +1,80 @@
+.card{
+    aspect-ratio: 1;
+    position: relative;
+    cursor:pointer
+}
+
+body.dark .card div{
+    background: #000;
+}
+
+.card:hover div,.card:focus div{
+    background: #ccc;
+}
+
+body.dark .card:hover div,.card:focus div{
+    background: #121212;
+}
+
+.card div{
+    backface-visibility: hidden;
+    transition: transform .5s ease-in-out;
+    background: #eee;
+    border-radius: .5rem;
+
+}
+
+.front{
+    color:rgb(112, 112, 112);
+    font-size:5em;
+    width:100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back{
+    width:100%;
+    height:100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+}
+
+.back img{
+    width:100%;
+    border-radius: .5em;
+}
+
+.card.active{
+    pointer-events: none;
+    cursor:not-allowed
+}
+
+.card.active .front{
+    transform: rotateY(180deg);
+}
+
+.card.active .back{
+    transform: rotateY(0deg);
+}
+
+@media screen and (max-width:700px) {
+    .card{
+        width:auto;
+    }
+    .front{
+        font-size:3em
+    }
+    .card:hover div,.card:focus div{
+        background: #eee;
+    }
+
+    body.dark .card:hover div,.card:focus div{
+        background: #000;
+    }
+}

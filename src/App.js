@@ -1,23 +1,27 @@
+import Card from "./components/Card";
 import { images } from "./images";
+import { remixArr } from "./utils/remixArr";
 
-const remixArr = (arr) => {
-	const duplicatedArr = arr.flatMap((item) => [item, item]);
-
-	const shuffledArr = duplicatedArr.sort(() => Math.random() - 0.5);
-
-	return shuffledArr;
-};
+import "./card.css";
+import "./App.css";
 
 function App() {
 	const arr = remixArr(images);
 
+	console.log(arr);
+
 	return (
-		<div className="bg-bg h-screen grid grid-cols-4">
-			{arr.map((item) => (
-				<div className="w-44 h-44 rounded-xl bg-white flex items-center justify-center">
-					<img className="w-40 h-40 rounded-md" src={item.image} alt="" />
-				</div>
-			))}
+		<div className="relative bg-bg w-full h-screen flex sm:justify-center">
+			<div className="grid grid-cols-4-auto md:grid-cols-5-auto gap-3 lg:aspect-6/5 lg:mt-3 h-90-vh content-center justify-center m-2">
+				{arr.map((item) => (
+					<div className="">
+						<div className="f"></div>
+						<div className="b">
+							<img className="w-full" src={item.image} alt="" />
+						</div>
+					</div>
+				))}
+			</div>
 		</div>
 	);
 }
