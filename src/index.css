@@ -12,3 +12,15 @@ body{
     position: relative;
   height: 100%;
 }
+
+.active{
+    @apply pointer-events-none cursor-not-allowed
+}
+
+.c.active .f{
+    @apply rotate-y-180
+}
+
+.c.active .b{
+    @apply rotate-y-0
+}
