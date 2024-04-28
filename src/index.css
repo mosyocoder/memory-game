@@ -24,3 +24,15 @@ body{
 .c.active .b{
     @apply rotate-y-0
 }
+
+.matched{
+    @apply pointer-events-none cursor-not-allowed
+}
+
+.c.matched .f{
+    @apply rotate-y-180
+}
+
+.c.matched .b{
+    @apply rotate-y-0
+}
